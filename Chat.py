@@ -4,11 +4,11 @@ import time
 
 # st.set_page_config(layout="wide")
 
-st.title("Red Hat Docs Chatbot")
+st.title("Chatbot")
 
 responses = [
-    "Hello there! How can I assist you today?",
-    "Red Hat OpenShift AI is an open-source, container-based platform that provides machine learning and deep learning capabilities to developers and IT operations teams. It enables the creation, deployment, and management of AI applications on Kubernetes clusters, making it easy to build, train, and run AI models at scale. With OpenShift AI, organizations can accelerate their AI initiatives and innovate faster by leveraging the power of Kubernetes and the open-source AI community.",
+    # "Hello there! How can I assist you today?",
+    "There is no specific technology or platform known as OpenShift AI. OpenShift is a container orchestration platform developed by Red Hat. It enables organizations to deploy, manage, and scale containerized applications. Containers provide a lightweight and consistent environment for applications to run, making it easier to move applications between different environments.",
     "You're Welcome!"
 ]
 
