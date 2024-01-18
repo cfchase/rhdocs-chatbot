@@ -1,6 +1,7 @@
 import streamlit as st
 import random
 import time
+import re
 
 # st.set_page_config(layout="wide")
 
@@ -8,7 +9,7 @@ st.title("Chatbot")
 
 responses = [
     # "Hello there! How can I assist you today?",
-    "There is no specific technology or platform known as OpenShift AI. OpenShift is a container orchestration platform developed by Red Hat. It enables organizations to deploy, manage, and scale containerized applications. Containers provide a lightweight and consistent environment for applications to run, making it easier to move applications between different environments.",
+    "There is no specific technology or platform known as OpenShift AI. \n\n OpenShift is a container orchestration platform developed by Red Hat. It enables organizations to deploy, manage, and scale containerized applications. Containers provide a lightweight and consistent environment for applications to run, making it easier to move applications between different environments.",
     "You're Welcome!"
 ]
 
@@ -38,7 +39,7 @@ if prompt := st.chat_input("Questions?"):
         assistant_response = responses[st.session_state.response_index]
         st.session_state.response_index = (st.session_state.response_index + 1) % len(responses)
         # Simulate stream of response with milliseconds delay
-        for chunk in assistant_response.split():
+        for chunk in re.split(r'(\s+)', assistant_response):
             full_response += chunk + " "
             time.sleep(0.05)
             # Add a blinking cursor to simulate typing
